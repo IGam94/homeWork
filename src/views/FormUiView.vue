@@ -1,6 +1,6 @@
 <template>
-  <div>
-
+  <div class="flex items-center justify-center h-screen">
+123
   </div>
 </template>
 
