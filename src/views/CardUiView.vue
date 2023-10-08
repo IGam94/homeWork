@@ -1,25 +1,76 @@
 <template>
-  <div class="flex items-center justify-center h-screen">
-    <ul class="flex gap-8">
+  <div class="flex h-screen justify-center items-center">
+    <ul class="flex w-auto gap-8 flex-wrap">
       <li v-for="item in data" :key="item.id">
-       <Card :cardItem="item" />
+        <CardUi :cardItem="item" />
       </li>
+      <li><CardUiHorizontal :cardItem="horizontalData" /></li>
     </ul>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Card from '@/components/CardUi.vue'
+import { ref } from 'vue'
+import CardUi from '@/components/card/CardUi.vue'
+import CardUiHorizontal from '@/components/card/CardUiHorizontal.vue'
 
+// 상품데이터 하드코딩
 const data = ref([
-  {id:1,img:'../src/assets/image/productImg.png',label:'라벨1',title:'상품명1',cellPrice:10000,price:20000,star:5,review:'너무 좋네요~'},
-  {id:2,img:'',label:'라벨2',title:'상품명2',cellPrice:20000,price:30000,star:3},
-  {id:3,img:'',label:'라벨3',title:'상품명3',cellPrice:30000,price:40000,star:null},
-  {id:4,img:'',label:'라벨4',title:'상품명4',cellPrice:40000,price:50000,star:5,name:'Lee Joosang'},
+  {
+    id: 1,
+    img: '../src/assets/image/productImg.png',
+    label: '라벨1',
+    title: '상품명1',
+    cellPrice: 10000,
+    price: 20000,
+    star: 3,
+    review: '너무 좋네요~',
+    name: ''
+  },
+  {
+    id: 2,
+    img: '../src/assets/image/productImg.png',
+    label: '',
+    title: '상품명2',
+    cellPrice: 20000,
+    price: 30000,
+    review: '',
+    name: ''
+  },
+  {
+    id: 2,
+    img: '../src/assets/image/productImg.png',
+    label: '',
+    title: '',
+    cellPrice: null,
+    price: null,
+    star: 3,
+    review: '너무 좋네요~',
+    name: ''
+  },
+  {
+    id: 3,
+    img: null,
+    label: '프론트엔드 개발자',
+    title: '이주상',
+    cellPrice: null,
+    price: null,
+    star: 5,
+    review: '',
+    name: 'Lee Joosang'
+  }
 ])
+const horizontalData = ref({
+  id: 1,
+  img: '../src/assets/image/productImg.png',
+  label: '이 상품은 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고',
+  title: '상품명1',
+  cellPrice: null,
+  price: null,
+  star: 4,
+  review: '너무 좋네요~',
+  name: 'Lee Joosang'
+})
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
