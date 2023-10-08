@@ -18,6 +18,7 @@ export default defineConfig({
     }
   },
   build: {
+    base: '/homeWork/',
     outDir: './docs'
   }
 })
